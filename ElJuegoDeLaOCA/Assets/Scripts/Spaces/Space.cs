@@ -1,11 +1,11 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Space : MonoBehaviour
 {
     [SerializeField] protected BoardController boardController;
-    [SerializeField] protected SpaceType _spaceType;
-    [SerializeField] protected int _moveToPosition = 0;
+    [SerializeField] protected SpaceType spaceType;
+    [SerializeField] protected int spacePosition = 0;
+    [SerializeField] protected int moveToPosition = 0;
     [SerializeField] protected string textToShow = string.Empty;
 
     private void Start()
@@ -14,13 +14,8 @@ public class Space : MonoBehaviour
             Debug.Log("_textToShow is empty, please set up the corresponding text");
     }
 
-    public virtual SpaceRuleResult ApplySpaceRule(ref Player player)
+    public virtual string ApplySpaceRule(Player player)
     {
-        return ReturnResultText();
-    }
-
-    protected virtual SpaceRuleResult ReturnResultText()
-    {
-        return new SpaceRuleResult(textToShow);
+        return textToShow;
     }
 }

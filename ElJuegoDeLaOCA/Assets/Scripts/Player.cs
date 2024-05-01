@@ -2,7 +2,8 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    [SerializeField] private readonly string playerName;
+    [SerializeField] private string playerName;
+    private bool _canRollDiceAgain = false;
     private bool _canPlayNextTurn = true;
     private int _currentSpace = 0;
     private int _nextSpaceToMove = 0;
@@ -20,6 +21,16 @@ public class Player : MonoBehaviour
     public void SetCanPlayNextTurn(bool canPlayNextTurn)
     {
         _canPlayNextTurn = canPlayNextTurn;
+    }
+
+    public bool CanRollDiceAgain()
+    {
+        return _canRollDiceAgain;
+    }
+
+    public void SetCanRollDiceAgain(bool canRollDiceAgain)
+    {
+        _canRollDiceAgain = canRollDiceAgain;
     }
 
     public int GetCurrentSpace()
@@ -45,7 +56,8 @@ public class Player : MonoBehaviour
     public void ResetStatus()
     {
         _canPlayNextTurn = true;
-        _nextSpaceToMove = 0;
+        _canRollDiceAgain = false;
+        _nextSpaceToMove = _currentSpace;
     }
 
     public void UpdateCurrentSpace()

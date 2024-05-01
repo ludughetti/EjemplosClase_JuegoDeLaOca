@@ -1,12 +1,18 @@
+using UnityEngine;
+
 public class WinSpace : Space
 {
+    [SerializeField] GameController gameController;
+
     public WinSpace()
     {
-        _spaceType = SpaceType.WIN;
+        spaceType = SpaceType.WIN;
+        textToShow = "Ganaste la partida!";
     }
 
-    public override SpaceRuleResult ApplySpaceRule(ref Player player)
+    public override string ApplySpaceRule(Player player)
     {
-        return new SpaceRuleResult(textToShow, false, true);
+        gameController.TriggerWin();
+        return player.GetPlayerName() + textToShow;
     }
 }

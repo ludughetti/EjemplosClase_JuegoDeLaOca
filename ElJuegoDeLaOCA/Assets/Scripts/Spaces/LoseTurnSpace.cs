@@ -2,12 +2,13 @@
 {
     public LoseTurnSpace()
     {
-        _spaceType = SpaceType.LOSE_TURN;
+        spaceType = SpaceType.LOSE_TURN;
+        textToShow = "Pierdes un turno";
     }
 
-    public override SpaceRuleResult ApplySpaceRule(ref Player player)
+    public override string ApplySpaceRule(Player player)
     {
         player.SetCanPlayNextTurn(false);
-        return ReturnResultText();
+        return textToShow;
     }
 }
