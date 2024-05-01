@@ -6,69 +6,130 @@ using UnityEngine;
 
 public class Game : MonoBehaviour
 {
+    [SerializeField] private BoardController boardController;
+    [SerializeField] private List<Player> players = new();
     [SerializeField] private TMP_Text labelCurrentPlayer;
     [SerializeField] private TMP_Text labelWhatHappened;
-    [SerializeField] private Board board;
     [SerializeField] private TMP_Text labelDiceResult;
 
-    private bool pierdeTurno1 = false;
-    private bool pierdeTurno2 = false;
-    private int posicionJugador1 = 1;
-    private int posicionJugador2 = 1;
-    private int turno = 1;
-    private bool done = false;
-    
-    private int diceResult = 0;
-    private bool waitingForDice = false;
-
-    private List<BoardRule> tablero = new List<BoardRule>();
+    private int _totalSpacesInBoard = 0;
+    private int _diceResult = 0;
+    private bool _waitingForDice = false;
+    private bool _playerHasWon = false;
 
     private void Start()
     {
-        tablero.Add(new GoForward());
-        tablero.Add(new GoBackward());
-        tablero.Add(new LooseTurn());
-        tablero.Add(new ThrowAgain());
+        SetupInitialText();
+        _playerHasWon = false;
+        StartCoroutine(PlayGame());
+    }
 
+    private void SetupInitialText()
+    {
         labelCurrentPlayer.text = "";
         labelWhatHappened.text = "";
         labelDiceResult.text = "?";
-
-        posicionJugador1 = 1;
-        posicionJugador2 = 1;
-        turno = 1;
-        done = false;
-        StartCoroutine(PlayTurn());
     }
 
-    public void Initialize(List<BoardRule> tablero)
+    private IEnumerator PlayGame()
     {
-        //TAREA USAR ESTE METODO EN VEZ DEL START
+        _totalSpacesInBoard = boardController.GetBoardSize();
+
+        while (!_playerHasWon)
+        {
+            foreach (Player player in players)
+            {
+                labelCurrentPlayer.text = player.name;
+                StartCoroutine(PlayTurn(player));
+            }
+
+            yield return null;
+        }
     }
 
-    private IEnumerator PlayTurn()  // ---> TAREA: Refactorear este método para que sea mas "clean code"
+    private IEnumerator PlayTurn(Player player)
     {
-        diceResult = 0;
+        // Wait for player to click the dice button
+        while (_diceResult == 0)
+            yield return new WaitForEndOfFrame();
+
+        _waitingForDice = true;
+
+        // Once the dice's been clicked, move the player
+        MovePlayerToSpace(player);
+        Space playerCurrentSpace = boardController.MovePlayer(player);
+        yield return new WaitForSeconds(1);
+
+        // Apply the rule for that space
+        SpaceRuleResult result = playerCurrentSpace.ApplySpaceRule(ref player);
+        CheckSpaceRuleResult(result, player);
+    }
+
+    private IEnumerator OnRollDice()
+    {
+        if (!_waitingForDice)
+            yield return new WaitForEndOfFrame();
+
+        System.Random r = new();
+
+        int resultado = r.Next(1, 7);
+        labelDiceResult.text = resultado.ToString();
+
+        _diceResult = resultado;
+    }
+
+    private void MovePlayerToSpace(Player player)
+    {
+        int nextSpaceToMove = Math.Min(_totalSpacesInBoard, player.GetCurrentSpace() + _diceResult);
+        player.SetNextSpaceToMove(nextSpaceToMove);
+    }
+
+    private void CheckSpaceRuleResult(SpaceRuleResult result, Player player)
+    {
+        labelWhatHappened.text = result.GetTextToShow();
+
+        if (result.IsWin())
+        {
+            _playerHasWon = true;
+            return;
+        }
+
+        ResetDice();
+
+        if (result.CanRollDiceAgain())
+            StartCoroutine(PlayTurn(player));
+            
+    }
+
+    private void ResetDice()
+    {
+        _waitingForDice = false;
+        _diceResult = 0;
+    }
+
+    private IEnumerator Old_PlayTurn()  // ---> TAREA: Refactorear este método para que sea mas "clean code"
+    {
+        _diceResult = 0;
         labelWhatHappened.text = "";
 
-        if (turno == 1)
+        if (_turnCounter == 1)
         {
             labelCurrentPlayer.text = "1";
             if (!pierdeTurno1)
             {
-                waitingForDice = true;
-                while (diceResult == 0)
+                _waitingForDice = true;
+                while (_diceResult == 0)
                 {
                     yield return new WaitForEndOfFrame();
                 }
-                waitingForDice = false;
-                posicionJugador1 = Math.Min(36, posicionJugador1 + diceResult);
-                labelWhatHappened.text = "Sacó un " + diceResult.ToString() + " y se mueve al casillero nro " + posicionJugador1.ToString();
-                board.MovePlayerToCell(turno, posicionJugador1);
+                _waitingForDice = false;
+                posicionJugador1 = Math.Min(36, posicionJugador1 + _diceResult);
+                labelWhatHappened.text = "Sacó un " + _diceResult.ToString() + " y se mueve al casillero nro " + posicionJugador1.ToString();
+                board.MovePlayer(_turnCounter, posicionJugador1);
                 yield return new WaitForSeconds(1);
 
-                posicionJugador1 = CheckWhatHappens(1, posicionJugador1);
-                board.MovePlayerToCell(turno, posicionJugador1);
+                //posicionJugador1 = CheckWhatHappens(1, posicionJugador1);
+                board.MovePlayer(_turnCounter, posicionJugador1);
             }
             else
             {
@@ -77,26 +138,26 @@ public class Game : MonoBehaviour
             }
 
             done = posicionJugador1 == 36;
-            turno = 2;
+            _turnCounter = 2;
         }
         else //if (turno == 2)
         {
             labelCurrentPlayer.text = "2";
             if (!pierdeTurno2)
             {
-                waitingForDice = true;
-                while (diceResult == 0)
+                _waitingForDice = true;
+                while (_diceResult == 0)
                 {
                     yield return new WaitForEndOfFrame();
                 }
-                waitingForDice = false;
-                posicionJugador2 = Math.Min(36, posicionJugador2 + diceResult);
-                labelWhatHappened.text = "Sacó un " + diceResult.ToString() + " y se mueve al casillero nro " + posicionJugador2.ToString();
-                board.MovePlayerToCell(turno, posicionJugador2);
+                _waitingForDice = false;
+                posicionJugador2 = Math.Min(36, posicionJugador2 + _diceResult);
+                labelWhatHappened.text = "Sacó un " + _diceResult.ToString() + " y se mueve al casillero nro " + posicionJugador2.ToString();
+                board.MovePlayer(_turnCounter, posicionJugador2);
                 yield return new WaitForSeconds(1);
 
-                posicionJugador2 = CheckWhatHappens(2, posicionJugador2);
-                board.MovePlayerToCell(turno, posicionJugador2);
+                //posicionJugador2 = CheckWhatHappens(2, posicionJugador2);
+                board.MovePlayer(_turnCounter, posicionJugador2);
             }
             else
             {
@@ -105,7 +166,7 @@ public class Game : MonoBehaviour
             }
 
             done = posicionJugador2 == 36;
-            turno = 1;
+            _turnCounter = 1;
         }
 
         if (done)
@@ -120,36 +181,5 @@ public class Game : MonoBehaviour
             yield return new WaitForSeconds(2);
             StartCoroutine(PlayTurn());
         }
-    }
-
-    private int CheckWhatHappens(int idJugador, int posicionJugador)
-    {
-        BoardRuleResult result = new BoardRuleResult(posicionJugador);
-
-        foreach (var regla in tablero)
-        {
-            if (regla.EsCompatible(posicionJugador))
-                result = regla.Accionar(idJugador, posicionJugador);
-        }
-
-        pierdeTurno1 = pierdeTurno1 || result.jugador1PierdeTurno;
-        pierdeTurno2 = pierdeTurno2 || result.jugador2PierdeTurno;
-
-        labelWhatHappened.text += result.textWhatHappened;
-
-        return result.newPosition;
-    }
-
-    public void OnDiceRoll()
-    {
-        if (!waitingForDice)
-            return;
-
-        System.Random r = new System.Random();
-
-        int resultado = r.Next(1, 7);
-        labelDiceResult.text = resultado.ToString();
-
-        diceResult = resultado;
     }
 }
