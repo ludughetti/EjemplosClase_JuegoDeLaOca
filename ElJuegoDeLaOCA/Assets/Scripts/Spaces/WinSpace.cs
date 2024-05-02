@@ -12,7 +12,8 @@ public class WinSpace : Space
 
     public override string ApplySpaceRule(Player player)
     {
+        Debug.Log($"Player {player.GetPlayerName()} fell in a Win space, trigger GameController.TriggerWin()");
         gameController.TriggerWin();
-        return player.GetPlayerName() + textToShow;
+        return textToShow;
     }
 }

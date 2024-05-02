@@ -2,7 +2,9 @@
 
 public class Space : MonoBehaviour
 {
+    [Header("Board")]
     [SerializeField] protected BoardController boardController;
+    [Header("Space setup")]
     [SerializeField] protected SpaceType spaceType;
     [SerializeField] protected int spacePosition = 0;
     [SerializeField] protected int moveToPosition = 0;

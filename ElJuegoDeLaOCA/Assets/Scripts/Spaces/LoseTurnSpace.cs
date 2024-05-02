@@ -1,4 +1,6 @@
-﻿public class LoseTurnSpace : Space
+﻿using UnityEngine;
+
+public class LoseTurnSpace : Space
 {
     public LoseTurnSpace()
     {
@@ -8,6 +10,7 @@
 
     public override string ApplySpaceRule(Player player)
     {
+        Debug.Log($"Player {player.GetPlayerName()} fell in a LoseTurn space, set CanPlayNextTurn to false");
         player.SetCanPlayNextTurn(false);
         return textToShow;
     }

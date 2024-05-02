@@ -1,4 +1,6 @@
-﻿public class MoveToAnotherSpace : Space
+﻿using UnityEngine;
+
+public class MoveToAnotherSpace : Space
 {
     public MoveToAnotherSpace()
     {
@@ -7,6 +9,7 @@
 
     public override string ApplySpaceRule(Player player)
     {
+        Debug.Log($"Player {player.GetPlayerName()} fell in a MoveToAnother space, will move to position {moveToPosition}");
         player.SetNextSpaceToMove(moveToPosition);
         boardController.MovePlayer(player, player.GetNextSpaceToMove());
 

@@ -1,4 +1,6 @@
-﻿public class RollAgainSpace : Space
+﻿using UnityEngine;
+
+public class RollAgainSpace : Space
 {
     public RollAgainSpace()
     {
@@ -8,6 +10,7 @@
 
     public override string ApplySpaceRule(Player player)
     {
+        Debug.Log($"Player {player.GetPlayerName()} fell in a RollAgain space, set CanRollDiceAgain to true");
         player.SetCanRollDiceAgain(true);
 
         return textToShow;

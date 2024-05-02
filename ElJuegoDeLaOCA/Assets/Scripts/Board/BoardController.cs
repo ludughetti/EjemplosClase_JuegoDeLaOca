@@ -3,7 +3,9 @@ using UnityEngine;
 
 public class BoardController : MonoBehaviour
 {
+    [Header("Spaces")]
     [SerializeField] private List<Space> spacesList;
+
     private Dictionary<int, Space> _board = new();
 
     public void InitializeBoard()
@@ -21,11 +23,8 @@ public class BoardController : MonoBehaviour
         }
     }
 
-    public Space MovePlayer(Player player, int diceResult)
+    public Space MovePlayer(Player player, int nextSpaceToMove)
     {
-        int nextSpaceToMove = Mathf.Min(_board.Count, player.GetCurrentSpace() + diceResult);
-        player.SetNextSpaceToMove(nextSpaceToMove);
-
         if (_board.TryGetValue(nextSpaceToMove - 1, out Space space))
         {
             player.GetComponent<Transform>().SetParent(space.GetComponent<Transform>());

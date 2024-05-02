@@ -136,6 +136,10 @@ PrefabInstance:
       value: 20 NormalSpace
       objectReference: {fileID: 0}
     - target: {fileID: 8242899461512440929, guid: 413f8f139246f8d4a94f88184996870d, type: 3}
+      propertyPath: textToShow
+      value: "No pas\xF3 nada"
+      objectReference: {fileID: 0}
+    - target: {fileID: 8242899461512440929, guid: 413f8f139246f8d4a94f88184996870d, type: 3}
       propertyPath: spacePosition
       value: 20
       objectReference: {fileID: 0}
@@ -255,6 +259,10 @@ PrefabInstance:
     - target: {fileID: 4419242896218630852, guid: 413f8f139246f8d4a94f88184996870d, type: 3}
       propertyPath: m_Name
       value: 34 NormalSpace
+      objectReference: {fileID: 0}
+    - target: {fileID: 8242899461512440929, guid: 413f8f139246f8d4a94f88184996870d, type: 3}
+      propertyPath: textToShow
+      value: "No pas\xF3 nada"
       objectReference: {fileID: 0}
     - target: {fileID: 8242899461512440929, guid: 413f8f139246f8d4a94f88184996870d, type: 3}
       propertyPath: spacePosition
@@ -378,6 +386,10 @@ PrefabInstance:
       value: 27 NormalSpace
       objectReference: {fileID: 0}
     - target: {fileID: 8242899461512440929, guid: 413f8f139246f8d4a94f88184996870d, type: 3}
+      propertyPath: textToShow
+      value: "No pas\xF3 nada"
+      objectReference: {fileID: 0}
+    - target: {fileID: 8242899461512440929, guid: 413f8f139246f8d4a94f88184996870d, type: 3}
       propertyPath: spacePosition
       value: 27
       objectReference: {fileID: 0}
@@ -497,6 +509,10 @@ PrefabInstance:
     - target: {fileID: 4419242896218630852, guid: 413f8f139246f8d4a94f88184996870d, type: 3}
       propertyPath: m_Name
       value: 35 NormalSpace
+      objectReference: {fileID: 0}
+    - target: {fileID: 8242899461512440929, guid: 413f8f139246f8d4a94f88184996870d, type: 3}
+      propertyPath: textToShow
+      value: "No pas\xF3 nada"
       objectReference: {fileID: 0}
     - target: {fileID: 8242899461512440929, guid: 413f8f139246f8d4a94f88184996870d, type: 3}
       propertyPath: spacePosition
@@ -710,6 +726,10 @@ PrefabInstance:
       value: 24 NormalSpace
       objectReference: {fileID: 0}
     - target: {fileID: 8242899461512440929, guid: 413f8f139246f8d4a94f88184996870d, type: 3}
+      propertyPath: textToShow
+      value: "No pas\xF3 nada"
+      objectReference: {fileID: 0}
+    - target: {fileID: 8242899461512440929, guid: 413f8f139246f8d4a94f88184996870d, type: 3}
       propertyPath: spacePosition
       value: 24
       objectReference: {fileID: 0}
@@ -827,9 +847,17 @@ PrefabInstance:
     m_TransformParent: {fileID: 594864569}
     m_Modifications:
     - target: {fileID: 311753589846149639, guid: 4f90bf6930cdf1445b7f86cef01eabec, type: 3}
+      propertyPath: textToShow
+      value: "Gan\xF3 la partida"
+      objectReference: {fileID: 0}
+    - target: {fileID: 311753589846149639, guid: 4f90bf6930cdf1445b7f86cef01eabec, type: 3}
       propertyPath: spacePosition
       value: 36
       objectReference: {fileID: 0}
+    - target: {fileID: 311753589846149639, guid: 4f90bf6930cdf1445b7f86cef01eabec, type: 3}
+      propertyPath: gameController
+      value: 
+      objectReference: {fileID: 487327247}
     - target: {fileID: 311753589846149639, guid: 4f90bf6930cdf1445b7f86cef01eabec, type: 3}
       propertyPath: boardController
       value: 
@@ -1081,6 +1109,10 @@ PrefabInstance:
       value: 10 NormalSpace
       objectReference: {fileID: 0}
     - target: {fileID: 8242899461512440929, guid: 413f8f139246f8d4a94f88184996870d, type: 3}
+      propertyPath: textToShow
+      value: "No pas\xF3 nada"
+      objectReference: {fileID: 0}
+    - target: {fileID: 8242899461512440929, guid: 413f8f139246f8d4a94f88184996870d, type: 3}
       propertyPath: spacePosition
       value: 10
       objectReference: {fileID: 0}
@@ -1200,6 +1232,10 @@ PrefabInstance:
     - target: {fileID: 4419242896218630852, guid: 413f8f139246f8d4a94f88184996870d, type: 3}
       propertyPath: m_Name
       value: 01 NormalSpace
+      objectReference: {fileID: 0}
+    - target: {fileID: 8242899461512440929, guid: 413f8f139246f8d4a94f88184996870d, type: 3}
+      propertyPath: textToShow
+      value: "No pas\xF3 nada"
       objectReference: {fileID: 0}
     - target: {fileID: 8242899461512440929, guid: 413f8f139246f8d4a94f88184996870d, type: 3}
       propertyPath: spacePosition
@@ -1597,6 +1633,10 @@ PrefabInstance:
       value: 26 NormalSpace
       objectReference: {fileID: 0}
     - target: {fileID: 8242899461512440929, guid: 413f8f139246f8d4a94f88184996870d, type: 3}
+      propertyPath: textToShow
+      value: "No pas\xF3 nada"
+      objectReference: {fileID: 0}
+    - target: {fileID: 8242899461512440929, guid: 413f8f139246f8d4a94f88184996870d, type: 3}
       propertyPath: spacePosition
       value: 26
       objectReference: {fileID: 0}
@@ -1760,6 +1800,7 @@ MonoBehaviour:
   players:
   - {fileID: 881343606}
   - {fileID: 72141692}
+  diceMaxValue: 6
   labelCurrentPlayer: {fileID: 345724456}
   labelWhatHappened: {fileID: 966953118}
   labelDiceResult: {fileID: 1995190517}
@@ -2027,6 +2068,10 @@ PrefabInstance:
     - target: {fileID: 4419242896218630852, guid: 413f8f139246f8d4a94f88184996870d, type: 3}
       propertyPath: m_Name
       value: 06 NormalSpace
+      objectReference: {fileID: 0}
+    - target: {fileID: 8242899461512440929, guid: 413f8f139246f8d4a94f88184996870d, type: 3}
+      propertyPath: textToShow
+      value: "No pas\xF3 nada"
       objectReference: {fileID: 0}
     - target: {fileID: 8242899461512440929, guid: 413f8f139246f8d4a94f88184996870d, type: 3}
       propertyPath: spacePosition
@@ -2622,6 +2667,10 @@ PrefabInstance:
       value: 19 NormalSpace
       objectReference: {fileID: 0}
     - target: {fileID: 8242899461512440929, guid: 413f8f139246f8d4a94f88184996870d, type: 3}
+      propertyPath: textToShow
+      value: "No pas\xF3 nada"
+      objectReference: {fileID: 0}
+    - target: {fileID: 8242899461512440929, guid: 413f8f139246f8d4a94f88184996870d, type: 3}
       propertyPath: spacePosition
       value: 19
       objectReference: {fileID: 0}
@@ -2741,6 +2790,10 @@ PrefabInstance:
     - target: {fileID: 4419242896218630852, guid: 413f8f139246f8d4a94f88184996870d, type: 3}
       propertyPath: m_Name
       value: 13 NormalSpace
+      objectReference: {fileID: 0}
+    - target: {fileID: 8242899461512440929, guid: 413f8f139246f8d4a94f88184996870d, type: 3}
+      propertyPath: textToShow
+      value: "No pas\xF3 nada"
       objectReference: {fileID: 0}
     - target: {fileID: 8242899461512440929, guid: 413f8f139246f8d4a94f88184996870d, type: 3}
       propertyPath: spacePosition
@@ -2954,6 +3007,10 @@ PrefabInstance:
       value: 15 NormalSpace
       objectReference: {fileID: 0}
     - target: {fileID: 8242899461512440929, guid: 413f8f139246f8d4a94f88184996870d, type: 3}
+      propertyPath: textToShow
+      value: "No pas\xF3 nada"
+      objectReference: {fileID: 0}
+    - target: {fileID: 8242899461512440929, guid: 413f8f139246f8d4a94f88184996870d, type: 3}
       propertyPath: spacePosition
       value: 15
       objectReference: {fileID: 0}
@@ -3073,6 +3130,10 @@ PrefabInstance:
     - target: {fileID: 4419242896218630852, guid: 413f8f139246f8d4a94f88184996870d, type: 3}
       propertyPath: m_Name
       value: 16 NormalSpace
+      objectReference: {fileID: 0}
+    - target: {fileID: 8242899461512440929, guid: 413f8f139246f8d4a94f88184996870d, type: 3}
+      propertyPath: textToShow
+      value: "No pas\xF3 nada"
       objectReference: {fileID: 0}
     - target: {fileID: 8242899461512440929, guid: 413f8f139246f8d4a94f88184996870d, type: 3}
       propertyPath: spacePosition
@@ -3328,6 +3389,10 @@ PrefabInstance:
     - target: {fileID: 4419242896218630852, guid: 413f8f139246f8d4a94f88184996870d, type: 3}
       propertyPath: m_Name
       value: 21 NormalSpace
+      objectReference: {fileID: 0}
+    - target: {fileID: 8242899461512440929, guid: 413f8f139246f8d4a94f88184996870d, type: 3}
+      propertyPath: textToShow
+      value: "No pas\xF3 nada"
       objectReference: {fileID: 0}
     - target: {fileID: 8242899461512440929, guid: 413f8f139246f8d4a94f88184996870d, type: 3}
       propertyPath: spacePosition
@@ -3678,6 +3743,10 @@ PrefabInstance:
       value: 08 NormalSpace
       objectReference: {fileID: 0}
     - target: {fileID: 8242899461512440929, guid: 413f8f139246f8d4a94f88184996870d, type: 3}
+      propertyPath: textToShow
+      value: "No pas\xF3 nada"
+      objectReference: {fileID: 0}
+    - target: {fileID: 8242899461512440929, guid: 413f8f139246f8d4a94f88184996870d, type: 3}
       propertyPath: spacePosition
       value: 8
       objectReference: {fileID: 0}
@@ -3797,6 +3866,10 @@ PrefabInstance:
     - target: {fileID: 4419242896218630852, guid: 413f8f139246f8d4a94f88184996870d, type: 3}
       propertyPath: m_Name
       value: 29 NormalSpace
+      objectReference: {fileID: 0}
+    - target: {fileID: 8242899461512440929, guid: 413f8f139246f8d4a94f88184996870d, type: 3}
+      propertyPath: textToShow
+      value: "No pas\xF3 nada"
       objectReference: {fileID: 0}
     - target: {fileID: 8242899461512440929, guid: 413f8f139246f8d4a94f88184996870d, type: 3}
       propertyPath: spacePosition
@@ -4045,6 +4118,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 594864569}
     m_Modifications:
     - target: {fileID: 4107367818016088858, guid: bf2720ed4da7f3249af6125d53a6722b, type: 3}
+      propertyPath: textToShow
+      value: Caiste sobre un casillero de Tira otra vez
+      objectReference: {fileID: 0}
+    - target: {fileID: 4107367818016088858, guid: bf2720ed4da7f3249af6125d53a6722b, type: 3}
       propertyPath: spacePosition
       value: 31
       objectReference: {fileID: 0}
@@ -4168,6 +4245,10 @@ PrefabInstance:
     - target: {fileID: 4419242896218630852, guid: 413f8f139246f8d4a94f88184996870d, type: 3}
       propertyPath: m_Name
       value: 17 NormalSpace
+      objectReference: {fileID: 0}
+    - target: {fileID: 8242899461512440929, guid: 413f8f139246f8d4a94f88184996870d, type: 3}
+      propertyPath: textToShow
+      value: "No pas\xF3 nada"
       objectReference: {fileID: 0}
     - target: {fileID: 8242899461512440929, guid: 413f8f139246f8d4a94f88184996870d, type: 3}
       propertyPath: spacePosition
@@ -4424,6 +4505,10 @@ PrefabInstance:
       value: 03 NormalSpace
       objectReference: {fileID: 0}
     - target: {fileID: 8242899461512440929, guid: 413f8f139246f8d4a94f88184996870d, type: 3}
+      propertyPath: textToShow
+      value: "No pas\xF3 nada"
+      objectReference: {fileID: 0}
+    - target: {fileID: 8242899461512440929, guid: 413f8f139246f8d4a94f88184996870d, type: 3}
       propertyPath: spacePosition
       value: 3
       objectReference: {fileID: 0}
@@ -4543,6 +4628,10 @@ PrefabInstance:
     - target: {fileID: 4419242896218630852, guid: 413f8f139246f8d4a94f88184996870d, type: 3}
       propertyPath: m_Name
       value: 11 NormalSpace
+      objectReference: {fileID: 0}
+    - target: {fileID: 8242899461512440929, guid: 413f8f139246f8d4a94f88184996870d, type: 3}
+      propertyPath: textToShow
+      value: "No pas\xF3 nada"
       objectReference: {fileID: 0}
     - target: {fileID: 8242899461512440929, guid: 413f8f139246f8d4a94f88184996870d, type: 3}
       propertyPath: spacePosition
@@ -4666,6 +4755,10 @@ PrefabInstance:
       value: 28 NormalSpace
       objectReference: {fileID: 0}
     - target: {fileID: 8242899461512440929, guid: 413f8f139246f8d4a94f88184996870d, type: 3}
+      propertyPath: textToShow
+      value: "No pas\xF3 nada"
+      objectReference: {fileID: 0}
+    - target: {fileID: 8242899461512440929, guid: 413f8f139246f8d4a94f88184996870d, type: 3}
       propertyPath: spacePosition
       value: 28
       objectReference: {fileID: 0}
@@ -4785,6 +4878,10 @@ PrefabInstance:
     - target: {fileID: 4419242896218630852, guid: 413f8f139246f8d4a94f88184996870d, type: 3}
       propertyPath: m_Name
       value: 23 NormalSpace
+      objectReference: {fileID: 0}
+    - target: {fileID: 8242899461512440929, guid: 413f8f139246f8d4a94f88184996870d, type: 3}
+      propertyPath: textToShow
+      value: "No pas\xF3 nada"
       objectReference: {fileID: 0}
     - target: {fileID: 8242899461512440929, guid: 413f8f139246f8d4a94f88184996870d, type: 3}
       propertyPath: spacePosition
@@ -4945,6 +5042,10 @@ PrefabInstance:
     - target: {fileID: 4419242896218630852, guid: 413f8f139246f8d4a94f88184996870d, type: 3}
       propertyPath: m_Name
       value: 32 NormalSpace
+      objectReference: {fileID: 0}
+    - target: {fileID: 8242899461512440929, guid: 413f8f139246f8d4a94f88184996870d, type: 3}
+      propertyPath: textToShow
+      value: "No pas\xF3 nada"
       objectReference: {fileID: 0}
     - target: {fileID: 8242899461512440929, guid: 413f8f139246f8d4a94f88184996870d, type: 3}
       propertyPath: spacePosition
@@ -5195,6 +5296,10 @@ PrefabInstance:
     - target: {fileID: 4419242896218630852, guid: 413f8f139246f8d4a94f88184996870d, type: 3}
       propertyPath: m_Name
       value: 04 NormalSpace
+      objectReference: {fileID: 0}
+    - target: {fileID: 8242899461512440929, guid: 413f8f139246f8d4a94f88184996870d, type: 3}
+      propertyPath: textToShow
+      value: "No pas\xF3 nada"
       objectReference: {fileID: 0}
     - target: {fileID: 8242899461512440929, guid: 413f8f139246f8d4a94f88184996870d, type: 3}
       propertyPath: spacePosition
@@ -5509,6 +5614,10 @@ PrefabInstance:
     - target: {fileID: 4419242896218630852, guid: 413f8f139246f8d4a94f88184996870d, type: 3}
       propertyPath: m_Name
       value: 09 NormalSpace
+      objectReference: {fileID: 0}
+    - target: {fileID: 8242899461512440929, guid: 413f8f139246f8d4a94f88184996870d, type: 3}
+      propertyPath: textToShow
+      value: "No pas\xF3 nada"
       objectReference: {fileID: 0}
     - target: {fileID: 8242899461512440929, guid: 413f8f139246f8d4a94f88184996870d, type: 3}
       propertyPath: spacePosition
